@@ -1,0 +1,67 @@
+@import "../colors/colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+
+}
+
+window,
+tooltip {
+    color: @foreground;
+    background-color: @background;
+}
+
+window#waybar {
+    border-radius: 12px;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #555869;
+    border-radius: 8px;
+}
+
+#workspaces button.active {
+    color: @foreground;
+}
+
+#workspaces button.focused {
+    color: @foreground;
+    background: #eba0ac;
+    border-radius: 8px;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background: #cdd6f4;
+    color: @background;
+}
+
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#workspaces,
+#tray,
+#power-profiles-daemon,
+#custom-controlcenter,
+#backlight {
+    padding: 0px 10px;
+    margin: 5px 0px;
+    /* for debug  */
+    /* border: 1px solid #b00d74; */
+}
