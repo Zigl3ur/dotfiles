@@ -23,4 +23,4 @@ My Personal Linux configuration files
 
 - [ ] Rearrange swaync css (colors especially)
 - [ ] Swaync notification group bg color change when clear / reduce
-- [ ] Hyprland keybinds to resize windows
+- [x] Hyprland keybinds to resize windows
