@@ -1,7 +1,7 @@
 @import "../colors/colors.css";
 
 * {
-    font-family: "Adwaita";
+    font-family: sans-serif;
     border: none;
     border-radius: 0;
     font-weight: bold;

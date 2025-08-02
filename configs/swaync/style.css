@@ -1,7 +1,7 @@
 @import "../colors/colors.css";
 
 :root {
-  font-family: Adwaita, sans-serif;
+  font-family: sans-serif;
   --cc-bg: @background;
   --noti-border-color: @background;
   --noti-bg: @background;
