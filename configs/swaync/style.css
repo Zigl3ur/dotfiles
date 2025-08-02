@@ -1,13 +1,12 @@
 @import "../colors/colors.css";
 
 :root {
-  font-family: JetBrainsMono Nerd Font, monospace;
+  font-family: Adwaita, sans-serif;
   --cc-bg: @background;
   --noti-border-color: @background;
   --noti-bg: @background;
   --noti-bg-darker: rgb(38, 38, 38);
   --noti-bg-hover: rgb(56, 56, 56);
-  --noti-bg-focus: rgba(68, 68, 68);
   --noti-close-bg: rgb(78, 78, 78);
   --noti-close-bg-hover: rgb(94, 94, 94);
   --text-color: @foreground;
@@ -18,7 +17,44 @@
   --button-active-bg: rgb(91, 91, 91);
 }
 
-/* TODO change icon when no notifs */
+.blank-window {
+  background: transparent;
+}
+
+button {
+  background: var(--noti-bg-darker);
+  color: var(--text-color);
+  text-shadow: none;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: none;
+  border: none;
+}
+
+button:hover {
+  box-shadow: none;
+  background: var(--noti-bg-hover);
+  border: none;
+}
+
+trough {
+  border-radius: 8px;
+  background: var(--noti-bg-darker);
+  border: none;
+}
+
+trough highlight {
+  background: rgba(53, 132, 228, 1);
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+  transition: all .7s ease;
+}
+
+scale slider {
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+}
 
 .close-button {
   /* The notification Close Button */
@@ -45,10 +81,6 @@
 .notification-row {
   background: none;
   outline: none;
-}
-
-.notification-row:focus {
-  background: var(--noti-bg-focus);
 }
 
 .notification-row .notification-background {
@@ -113,7 +145,7 @@
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box {
   /* The text box containing the summary, time and body */
-  margin-left: 10px;  
+  margin-left: 10px;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .summary {
@@ -122,6 +154,7 @@
   font-weight: bold;
   color: var(--text-color);
   text-shadow: none;
+  
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
@@ -160,15 +193,16 @@
 }
 
 .notification-group:focus {
-  background: var(--noti-bg-focus);
+  background: transparent;
 }
 
 .notification-group .notification-group-close-button .close-button {
   margin: 12px 20px;
 }
 
-.notification-group .notification-group-buttons, .notification-group .notification-group-headers {
-  margin: 0 16px;
+.notification-group .notification-group-buttons,
+.notification-group .notification-group-headers {
+  margin: 5px 16px;
   color: var(--text-color);
 }
 
@@ -180,6 +214,7 @@
 
 .notification-group .notification-group-headers .notification-group-header {
   color: var(--text-color);
+  font-size: 1.2rem;
 }
 
 /* .notification-group.collapsed.not-expanded {
@@ -190,54 +225,25 @@
   background-color: var(--noti-bg);
 }
 
-.notification-group-buttons > button {
-  background-color: var(--noti-bg-darker);
-  border-radius: 8px;
-}
-
-.notification-group-buttons > button:hover {
-  background-color: var(--noti-bg-hover);
-}
-
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
-  background: rgba(17, 17, 17, 0.8);
+  background: rgba(17,17,17, 0.9);
   color: var(--text-color);
   border-radius: 8px;
   padding: 0px 4px;
 }
 
-.control-center .control-center-list-placeholder {
+.control-center-list-placeholder {
   /* The placeholder when there are no notifications */
   opacity: 0.5;
 }
 
 /*** Widgets ***/
 
-/* Main Title */
-.widget-title.Main > label {
-  margin: 8px;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
 /* Title widget */
-.widget-title > label {
-  margin: 8px;;
-  font-size: 1.5rem;
-}
-
-.widget-title > button {
-  background-color: var(--noti-bg-darker);
-}
-
-.widget-title > button:hover {
-  background-color: var(--noti-bg-hover);
-}
-
-.widget-title > button {
+.widget-title>label {
   margin: 8px;
-  border-radius: 8px;
+  font-size: 1.5rem;
 }
 
 /* buttons grid widget */
@@ -246,104 +252,74 @@
   margin: 0px;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
-  border-radius: 8px;
-  padding: 8px;
-  background-color: var(--noti-bg-darker);
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  font-size: 1.15rem;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background-color: var(--noti-bg-hover);
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button:checked {
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
   background-color: rgba(53, 132, 228, 1);
   color: white;
 }
 
 /* Mpris widget */
 :root {
-  --mpris-button-hover: rgba(0, 0, 0, 0.5);
   --mpris-album-art-icon-size: 96px;
 }
 
-.widget-mpris  {
+.widget-mpris {
   margin: 0;
   /* The parent to all players */
 }
 
-.widget-mpris .widget-mpris-player {
-  margin: 12px;
+.widget-mpris > box > button {
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding: 0px 4px;
+}
+
+.widget-mpris
+
+.widget-mpris-player {
+  margin: 4px 10px;
   border-radius: 8px;
+}
+
+.mpris-overlay {
+  background-color: @background;
 }
 
 .widget-mpris .widget-mpris-player .mpris-background {
-  filter: blur(10px);
+  filter: blur(100px);
+  background-color: rgba(0, 0, 0, 1);
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay {
-  padding: 16px;
-  background-color: var(--noti-bg);
+.mpris-overlay > box > button {
+  margin-top: 12px;
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay button:hover {
-  /* The media player buttons (play, pause, next, etc...) */
-  background: var(--noti-bg-hover);
+.widget-mpris-player-buttons {
+  padding: 18px;
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
+.widget-mpris-album-art {
   border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
   -gtk-icon-size: var(--mpris-album-art-icon-size);
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
+.widget-mpris-title {
   font-weight: bold;
   font-size: 1.25rem;
 }
 
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
+.widget-mpris-subtitle {
   font-size: 1.1rem;
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay > box > button {
-  /* The buttons in the MPRIS widget */
-  background-color: var(--noti-bg-darker);
-  border-radius: 8px;
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay > box > button:hover {
-  background-color: var(--mpris-button-hover);
 }
 
 /* Menubar widget */
 .widget-menubar > box > box > button {
-  background-color: var(--noti-bg-darker);
-  border-radius: 8px;
+  padding: 8px 24px;
+  font-size: 1.2rem;
   margin: 0;
-}
-
-.widget-menubar > box > box > button:hover {
-  background-color: var(--noti-bg-hover);
-}
-
-.widget-menubar > revealer > box > button {
-  background-color: var(--noti-bg-darker);
-  border-radius: 8px;
-}
-
-.widget-menubar > revealer > box > button:hover {
-  background-color: var(--noti-bg-hover);
-}
-
-/* Title widget */
-.widget-title > button {
-  background-color: var(--noti-bg-darker);
-  border-radius: 8px;
-}
-
-.widget-title > button:hover {
-  background-color: var(--noti-bg-hover);
 }
 
 /* Volume widget */
@@ -351,8 +327,4 @@
 .widget-backlight label {
   font-size: 1.5rem;
   margin-right: 6px;
-}
-
-scale slider {
-  border-radius: 8px;
 }

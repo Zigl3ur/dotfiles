@@ -1,9 +1,9 @@
 @import "../colors/colors.css";
 
 * {
+    font-family: "Adwaita";
     border: none;
     border-radius: 0;
-    font-family: JetBrainsMono Nerd Font, monospace;
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
@@ -17,11 +17,11 @@ tooltip {
 }
 
 window#waybar {
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 #workspaces button {
-    padding: 5px;
+    padding: 4px 8px;
     color: #555869;
     border-radius: 8px;
 }
@@ -37,8 +37,8 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
+    color: @foreground;
+    background: #3584E4;
     border-radius: 8px;
 }
 

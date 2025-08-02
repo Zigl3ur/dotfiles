@@ -1,12 +1,11 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "ignore-gtk-theme": true,
   "positionX": "right",
   "positionY": "top",
+  "ignore-gtk-theme": true,
   "layer": "overlay",
   "control-center-layer": "top",
   "layer-shell": true,
-  "layer-shell-cover-screen": true,
   "cssPriority": "user",
   "control-center-margin-top": 5,
   "control-center-margin-bottom": 5,
@@ -21,19 +20,16 @@
   "timeout-critical": 0,
   "fit-to-screen": true,
   "relative-timestamps": true,
-  "control-center-width": 500,
+  "control-center-width": 380,
   "control-center-height": 600,
   "notification-window-width": 500,
   "keyboard-shortcuts": true,
-  "notification-grouping": true,
   "image-visibility": "when-available",
   "transition-time": 200,
   "hide-on-clear": false,
   "hide-on-action": true,
-  "text-empty": "No Notifications",
   "script-fail-notify": true,
   "widgets": [
-    "title#Main",
     "title#Controls",
     "buttons-grid",
     "volume",
@@ -44,10 +40,6 @@
     "menubar#label"
   ],
   "widget-config": {
-    "title#Main": {
-      "text": "Control Center",
-      "clear-all-button": false
-    },
     "title#Controls": {
       "text": "Controls",
       "clear-all-button": false
@@ -57,21 +49,18 @@
         {
           "label": " ",
           "type": "toggle",
-          "active": false,
           "command": "swaync-client -d -sw",
           "update-command": "swaync-client -D"
         },
         {
           "label": " ",
           "type": "toggle",
-          "active": false,
           "command": "~/.config/swaync/scripts/wifi.sh",
           "update-command": "nmcli radio wifi | grep -q enabled && echo true || echo false"
         },
         {
           "label": "󰂯",
           "type": "toggle",
-          "active": false,
           "command": "~/.config/swaync/scripts/bluetooth.sh",
           "update-command": "bluetooth | grep -q 'bluetooth = on' && echo true || echo false"
         }
@@ -86,7 +75,7 @@
     },
     "mpris": {
       "show-album-art": "always",
-      "loop-carousel": false
+      "loop-carousel": true
     },
     "title#Notifications": {
       "text": "Notifications",
@@ -98,27 +87,27 @@
         "position": "right",
         "actions": [
           {
-            "label": " Lock",
+            "label": "   Lock",
             "command": "hyprlock"
           },
           {
-            "label": " Logout",
+            "label": "   Logout",
             "command": "exit"
           },
           {
-            "label": " Suspend",
+            "label": "   Suspend",
             "command": "systemctl suspend"
           },
           {
-            "label": "󰒲 Hibernate",
+            "label": "󰒲   Hibernate",
             "command": "systemctl hibernate"
           },
           {
-            "label": " Reboot",
+            "label": "   Reboot",
             "command": "systemctl reboot"
           },
           {
-            "label": " Shut down",
+            "label": "   Shut down",
             "command": "systemctl poweroff"
           }
         ]
@@ -128,15 +117,15 @@
         "position": "left",
         "actions": [
           {
-            "label": "  Balanced",
+            "label": "    Balanced",
             "command": "powerprofilesctl set balanced && notify-send --app-name='Power' 'Power Profile' 'Switched to balanced'"
           },
           {
-            "label": "  Power-saver",
+            "label": "   Power-saver",
             "command": "powerprofilesctl set power-saver && notify-send --app-name='Power' 'Power Profile' 'Switched to power-saver'"
           },
           {
-            "label": "  Performance",
+            "label": "   Performance",
             "command": "powerprofilesctl set performance && notify-send --app-name='Power' 'Power Profile' 'Switched to performance'"
           }
         ]

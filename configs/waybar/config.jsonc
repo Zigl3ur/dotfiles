@@ -2,6 +2,7 @@
   "layer": "top",
   "position": "top",
   "mode": "dock",
+  "ignore-gtk-theme": true,
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
@@ -9,6 +10,7 @@
   "modules-left": ["hyprland/workspaces", "tray"],
   "modules-center": ["clock"],
   "modules-right": [
+    "privacy",
     "pulseaudio",
     "memory",
     "cpu",
@@ -50,25 +52,42 @@
     }
   },
 
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 14,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 14
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 14
+      }
+    ]
+  },
+
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
       "critical": 20
     },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format": "{capacity}%  {icon}",
+    "format-charging": "{capacity}%  ",
+    "format-plugged": "{capacity}%  ",
+    "format-alt": "{time}  {icon}",
+    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰁹"]
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}  {volume}%",
     "tooltip": false,
-    "format-muted": "  Muted",
+    "format-muted": "   Muted",
     "on-click": "pavucontrol",
-    "on-click-right": "pamixer -t",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "pamixer -i 5",
     "on-scroll-down": "pamixer -d 5",
     "reverse-scrolling": true,
@@ -88,28 +107,28 @@
       "m": 30 // medium
     },
     "interval": 10,
-    "format": "󰾆 {used}GB",
-    "format-m": "󰾅 {used}GB",
-    "format-h": "󰓅 {used}GB",
-    "format-c": "󰓅 <span foreground='#ff5555'>{used}GB</span>",
-    "format-alt": "󰾆 {percentage}%",
+    "format": "󰾆  {used}GB",
+    "format-m": "󰾅  {used}GB",
+    "format-h": "󰓅  {used}GB",
+    "format-c": "󰓅  <span foreground='#ff5555'>{used}GB</span>",
+    "format-alt": "󰾆  {percentage}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+    "tooltip-format": "{percentage}%\n{used:0.1f}GB/{total:0.1f}GB"
   },
 
   "cpu": {
     "interval": 10,
-    "format": "󰍛 {usage}%",
+    "format": "󰍛  {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
   },
 
   "network": {
     "tooltip": true,
-    "format-wifi": " ",
+    "format-wifi": "",
     "format-ethernet": "󰈀",
-    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#99ffdd'>  {bandwidthDownBytes}</span> <span foreground='#ffcc66'>  {bandwidthUpBytes}</span>",
     "format-linked": "󰈀",
     "format-disconnected": "󰖪",
     "format-disabled": "󰖪",

@@ -27,15 +27,6 @@ alias known-hosts="nano ~/.ssh/known_hosts" # Edit known hosts
 alias ssh-config="nano ~/.ssh/config" # Edit SSH config
 alias font-reload="fc-cache -fv"
 
-# ----- GIT ALIASES -----
-# Shortcuts for common Git commands
-alias gs="git status" # Git status
-alias gf="git fetch" # Git fetch
-alias gp="git pull" # Git pull
-alias gl="git log --graph --all" # Git log with graph
-alias go="onefetch" # Display repository info
-alias gla="git shortlog -sne" # List contributors
-
 # ----- MISC ALIASES -----
 
 # ----- Medias -----
@@ -94,7 +85,7 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # pnpm
 set -gx PNPM_HOME "/home/eden/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
 

@@ -1,0 +1,100 @@
+configuration {
+	modi: "drun,window,filebrowser,run";
+	display-drun: "Applications";
+	display-window: "Windows";
+	display-filebrowser: "File Browser";
+	display-run: "Run";
+	drun-display-format: "{icon} {name}";
+	filebrowser-display-format: "{icon} {name}";
+	font: "Sans Serif 16";
+	show-icons: true;
+}
+
+@theme "/dev/null"
+
+* { 
+	bg: #171717; 
+	bg-secondary: #2a2a2a; 
+	fg: #a6adc8; 
+	fg-secondary: #b0b0b0; 
+	background-color: @bg; 
+	text-color: @fg; 
+	border: 0; 
+	margin: 0; 
+	padding: 0; 
+	spacing: 0; 
+}
+
+window {
+	width: 40%;
+	border-radius: 8;
+	location: center;
+	anchor: center;
+	children: [inputbar, listview, mode-switcher];
+}
+
+mode-switcher {
+	enabled: true;
+	padding: 12;
+	margin: 0 12 0 12;
+}
+
+button {
+	background-color: @bg;
+	text-color: @fg;
+	border-radius: 8;
+	padding: 12;
+	margin: 6;
+}
+
+button selected {
+	background-color: @bg-secondary;
+}
+
+element {
+	padding: 12;
+	border-radius: 8;
+}
+
+element selected {
+	background-color: @bg-secondary;
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+	vertical-align: center;
+}
+
+element-icon {
+	size: 30;
+}
+
+element-icon selected {
+	background-color: @bg-secondary;
+}
+
+prompt {
+	text-color: @fg;
+	padding: 24 12 24 24;
+}
+
+entry {
+	placeholder: "Search...";
+	margin: 12;
+	border-radius: 8;
+	background-color: @bg-secondary;
+	padding: 12;
+	text-color: @fg;
+}
+
+inputbar {
+	children: [prompt, entry];
+}
+
+listview {
+	margin: 10;
+	background-color: @bg;
+	columns: 1;
+	lines: 8;	
+}
