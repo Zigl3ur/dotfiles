@@ -17,6 +17,7 @@
     "bluetooth",
     "network",
     "battery",
+    "power-profiles-daemon",
     "custom/controlcenter"
   ],
 
@@ -62,11 +63,22 @@
         "tooltip-icon-size": 14
       },
       {
-        "type": "audio-out",
+        "type": "audio-in",
         "tooltip": true,
         "tooltip-icon-size": 14
       }
     ]
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip": false,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": " ",
+      "power-saver": " "
+    }
   },
 
   "battery": {
@@ -126,7 +138,7 @@
 
   "network": {
     "tooltip": true,
-    "format-wifi": "",
+    "format-wifi": " ",
     "format-ethernet": "󰈀",
     "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#99ffdd'>  {bandwidthDownBytes}</span> <span foreground='#ffcc66'>  {bandwidthUpBytes}</span>",
     "format-linked": "󰈀",

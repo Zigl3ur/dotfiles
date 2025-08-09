@@ -58,10 +58,9 @@ window#waybar {
 #workspaces,
 #tray,
 #power-profiles-daemon,
-#custom-controlcenter,
-#backlight {
+#custom-controlcenter {
     padding: 0px 10px;
     margin: 5px 0px;
     /* for debug  */
-    /* border: 1px solid #b00d74; */
+    border: 1px solid #b00d74;
 }
