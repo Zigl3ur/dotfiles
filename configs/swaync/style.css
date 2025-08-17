@@ -189,6 +189,7 @@ scale slider {
 .notification-group {
   /* Styling only for Grouped Notifications */
   transition: opacity 200ms ease-in-out;
+  background-color: transparent;
   /* The groups close button */
 }
 
