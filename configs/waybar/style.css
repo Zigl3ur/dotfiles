@@ -37,8 +37,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    color: @foreground;
-    background: #3584E4;
+    color: #3584E4;
     border-radius: 8px;
 }
 
@@ -63,4 +62,13 @@ window#waybar {
     margin: 5px 0px;
     /* for debug  */
     /* border: 1px solid #b00d74; */
+}
+
+#tray menu {
+    background: @background;
+}
+
+#tray menu menuitem:hover {
+    background: @foreground;
+    color: @background;
 }
