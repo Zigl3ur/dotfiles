@@ -7,10 +7,11 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 0,
-  "modules-left": ["hyprland/workspaces", "tray"],
+  "modules-left": ["hyprland/workspaces", "tray", "privacy"],
   "modules-center": ["clock"],
   "modules-right": [
-    "privacy",
+    "mpris",
+    "pulseaudio#mic",
     "pulseaudio",
     "memory",
     "cpu",
@@ -32,6 +33,23 @@
     "icon-size": 13,
     "spacing": 10,
     "on-click-right": "toggle"
+  },
+
+  "mpris": {
+    "format": "{status_icon} {artist} - {title}",
+    "format-paused": "{status_icon} {artist} - {title}",
+    "format-stopped": "{status_icon}",
+    "tooltip-format": "{title}\n{album}\nby {artist}\n\n{position} / {length}",
+    "status-icons": {
+      "playing": " ",
+      "paused": " ",
+      "stopped": " "
+    },
+    "artist-len": 20,
+    "title-len": 20,
+    "on-click": "playerctl next",
+    "on-click-middle": "playerctl play-pause",
+    "on-click-right": "playerctl previous"
   },
 
   "clock": {
@@ -96,10 +114,10 @@
 
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "tooltip": false,
-    "format-muted": "   Muted",
+    "tooltip": true,
+    "format-muted": " ",
     "on-click": "pavucontrol",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-scroll-up": "pamixer -i 5",
     "on-scroll-down": "pamixer -d 5",
     "reverse-scrolling": true,
@@ -109,6 +127,21 @@
       "hands-free": "",
       "headset": "",
       "default": ["", "", "", " "]
+    }
+  },
+
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "tooltip": true,
+    "format-source": "  {volume}%",
+    "format-source-muted": " ",
+    "on-click": "pavucontrol",
+    "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+    "scroll-step": 5,
+    "format-icons": {
+      "default": [""]
     }
   },
 
