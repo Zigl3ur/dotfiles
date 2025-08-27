@@ -11,7 +11,7 @@
   --noti-close-bg-hover: rgb(94, 94, 94);
   --text-color: @foreground;
   --text-color-disabled: rgb(150, 150, 150);
-  --notification-icon-size: 64px;
+  --notification-icon-size: 36px;
   --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
   --notification-group-icon-size: 32px;
   --button-active-bg: rgb(91, 91, 91);
@@ -63,8 +63,6 @@ scale slider {
   text-shadow: none;
   padding: 0;
   border-radius: 8px;
-  margin-top: 8px;
-  margin-right: 8px;
   box-shadow: none;
   border: none;
   min-width: 24px;
@@ -150,7 +148,7 @@ scale slider {
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .summary {
   /* Notification summary/title */
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: var(--text-color);
   text-shadow: none;
@@ -159,16 +157,15 @@ scale slider {
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
   /* Notification time-ago */
-  font-size: 16px;
+  font-size: 14px;
   font-weight: lighter;
   color: var(--text-color);
   text-shadow: none;
-  margin-right: 35px;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .body {
   /* Notification body */
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
   color: var(--text-color);
   text-shadow: none;
@@ -226,6 +223,11 @@ scale slider {
   background-color: var(--noti-bg);
 }
 
+.widget-notifications {
+  margin: 0 2px;
+  padding: 0;
+}
+
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
   background: rgba(17,17,17, 0.9);
@@ -243,7 +245,6 @@ scale slider {
 
 /* Title widget */
 .widget-title>label {
-  margin: 8px;
   font-size: 1.5rem;
 }
 
@@ -279,7 +280,6 @@ scale slider {
 }
 
 .widget-mpris
-
 .widget-mpris-player {
   margin: 4px 10px;
   border-radius: 8px;
@@ -327,5 +327,5 @@ scale slider {
 .widget-volume label,
 .widget-backlight label {
   font-size: 1.5rem;
-  margin-right: 6px;
+  margin-right: 16px;
 }
