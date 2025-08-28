@@ -26,9 +26,9 @@ case "$1" in
 	if [ -z "$url" ]; then
 		echo ""
 	else
-        curl --silent "$url" --output /tmp/art.jpg
-		if [ -f /tmp/art.jpg ]; then
-            echo "/tmp/art.jpg"
+        curl --silent "$url" --output /tmp/album_art
+		if [ -f /tmp/album_art ]; then
+            echo "/tmp/album_art"
         else
             echo "~/.config/images/default_art.png"
         fi
