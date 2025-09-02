@@ -21,6 +21,5 @@ My Personal Linux configuration files
 
 ## TODOS
 
-- [ ] Rearrange swaync css (colors especially)
-- [ ] Swaync notification group bg color change when clear / reduce
+- [x] Swaync notification group bg color change when clear / reduce
 - [x] Hyprland keybinds to resize windows
