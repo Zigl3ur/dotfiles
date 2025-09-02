@@ -59,6 +59,7 @@ window#waybar {
 #workspaces,
 #mpris,
 #tray,
+#custom-notifications,
 #power-profiles-daemon,
 #custom-controlcenter {
     padding: 0px 10px;

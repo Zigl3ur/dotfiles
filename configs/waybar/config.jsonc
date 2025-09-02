@@ -7,7 +7,12 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 0,
-  "modules-left": ["hyprland/workspaces", "tray", "privacy"],
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/notifications",
+    "tray",
+    "privacy"
+  ],
   "modules-center": ["clock"],
   "modules-right": [
     "mpris",
@@ -148,8 +153,8 @@
   "memory": {
     "states": {
       "c": 90, // critical
-      "h": 60, // high
-      "m": 30 // medium
+      "h": 70, // high
+      "m": 50 // medium
     },
     "interval": 10,
     "format": "󰾆  {used}GB",
@@ -198,11 +203,11 @@
     "tooltip": false,
     "format": " ",
     "on-click": "swaync-client -t -sw"
-  }
+  },
 
-  // "custom/wlogout": {
-  //   "format": " ",
-  //   "tooltip": false,
-  //   "on-click": "wlogout"
-  // }
+  "custom/notifications": {
+    "exec": "~/.config/waybar/scripts/notifications.sh",
+    "on-click": "swaync-client -d -sw",
+    "restart-interval": 1
+  }
 }

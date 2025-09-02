@@ -9,10 +9,10 @@ DISABLED=󰂛
 
 if [ $notif_disabled != "true" ]; then
   if [ $notif_count -gt 0 ]; then
-    echo "$ENABLED_COUNT   $notif_count Notifications"
+    echo "$ENABLED_COUNT  $notif_count"
   else
-    echo "$ENABLED   No Notifications"
+    echo "$ENABLED"
   fi
 else
-  echo "$DISABLED   Do not Disturb"
+  echo "$DISABLED"
 fi
