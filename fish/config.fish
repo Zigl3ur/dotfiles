@@ -91,3 +91,5 @@ end
 
 # ---- Path -----
 set -Ux fish_user_paths /home/eden/.local/bin $fish_user_paths
+
+fish_add_path /home/eden/.spicetify

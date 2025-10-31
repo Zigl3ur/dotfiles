@@ -7,7 +7,6 @@
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
-
 }
 
 window,
@@ -16,7 +15,6 @@ tooltip * {
     color: @foreground;
     background-color: @background;
 }
-
 
 window#waybar {
     border-radius: 8px;
@@ -40,7 +38,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    color: #3584E4;
+    color: #3584e4;
     border-radius: 8px;
 }
 
@@ -52,14 +50,15 @@ window#waybar {
 #window,
 #clock,
 #network,
+#battery,
 #bluetooth,
 #cpu,
 #memory,
 #workspaces,
 #mpris,
 #tray,
-#custom-notifications,
 #power-profiles-daemon,
+#custom-notifications,
 #custom-controlcenter {
     padding: 0px 10px;
     margin: 2px 0px;

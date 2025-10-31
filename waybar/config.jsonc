@@ -11,7 +11,7 @@
     "hyprland/workspaces",
     "custom/notifications",
     "tray",
-    "privacy"
+    "privacy",
   ],
   "modules-center": ["clock"],
   "modules-right": [
@@ -22,21 +22,22 @@
     "cpu",
     "bluetooth",
     "network",
+    "battery",
     "power-profiles-daemon",
-    "custom/controlcenter"
+    "custom/controlcenter",
   ],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
-    "on-click": "activate"
+    "on-click": "activate",
     //"format": "{icon}",
   },
 
   "tray": {
     "icon-size": 13,
     "spacing": 10,
-    "on-click-right": "toggle"
+    "on-click-right": "toggle",
   },
 
   "mpris": {
@@ -47,13 +48,14 @@
     "status-icons": {
       "playing": " ",
       "paused": " ",
-      "stopped": " "
+      "stopped": " ",
     },
     "artist-len": 20,
     "title-len": 20,
     "on-click": "playerctl next",
     "on-click-middle": "playerctl play-pause",
-    "on-click-right": "playerctl previous"
+    "on-click-right": "playerctl previous",
+    "ignore-player": ["zen-browser"],
   },
 
   "clock": {
@@ -70,9 +72,9 @@
         "months": "<span color='#a6adc8'><b>{}</b></span>",
         "weekdays": "<span color='#a6adc8'><b>{}</b></span>",
         "today": "<span color='#a6adc8'><b>{}</b></span>",
-        "days": "<span color='#555869'><b>{}</b></span>"
-      }
-    }
+        "days": "<span color='#555869'><b>{}</b></span>",
+      },
+    },
   },
 
   "privacy": {
@@ -82,14 +84,14 @@
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 14
+        "tooltip-icon-size": 14,
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 14
-      }
-    ]
+        "tooltip-icon-size": 14,
+      },
+    ],
   },
 
   "power-profiles-daemon": {
@@ -99,8 +101,21 @@
       "default": "",
       "performance": "",
       "balanced": " ",
-      "power-saver": " "
-    }
+      "power-saver": " ",
+    },
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
+    },
+    "format": "{capacity}%  {icon}",
+    "format-charging": "{capacity}%  ",
+    "format-plugged": "{capacity}%  ",
+    "format-alt": "{time}  {icon}",
+    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰁹"],
   },
 
   "pulseaudio": {
@@ -117,8 +132,8 @@
       "headphone": "",
       "hands-free": "",
       "headset": "",
-      "default": ["", "", "", " "]
-    }
+      "default": ["", "", "", " "],
+    },
   },
 
   "pulseaudio#mic": {
@@ -132,15 +147,15 @@
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "scroll-step": 5,
     "format-icons": {
-      "default": [""]
-    }
+      "default": [""],
+    },
   },
 
   "memory": {
     "states": {
       "c": 90, // critical
       "h": 70, // high
-      "m": 50 // medium
+      "m": 50, // medium
     },
     "interval": 10,
     "format": "󰾆  {used}GB",
@@ -150,14 +165,14 @@
     "format-alt": "󰾆  {percentage}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "{percentage}%\n{used:0.1f}GB/{total:0.1f}GB"
+    "tooltip-format": "{percentage}%\n{used:0.1f}GB/{total:0.1f}GB",
   },
 
   "cpu": {
     "interval": 10,
     "format": "󰍛  {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
   "network": {
@@ -169,7 +184,7 @@
     "format-disconnected": "󰖪",
     "format-disabled": "󰖪",
     "tooltip-format-disconnected": "Disconnected",
-    "interval": 2
+    "interval": 2,
   },
   "bluetooth": {
     // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
@@ -177,23 +192,24 @@
     "format-icons": {
       "connected": "󰂱",
       "disabled": "󰂲",
-      "default": "󰂲"
+      "default": "󰂲",
     },
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager"
+    "on-click": "blueman-manager",
   },
 
   "custom/controlcenter": {
     "tooltip": false,
     "format": " ",
-    "on-click": "swaync-client -t -sw"
+    "on-click": "swaync-client -t -sw",
   },
 
   "custom/notifications": {
     "exec": "~/.config/waybar/scripts/notifications.sh",
     "on-click": "swaync-client -d -sw",
-    "restart-interval": 1
-  }
+    "tooltip": false,
+    "restart-interval": 1,
+  },
 }

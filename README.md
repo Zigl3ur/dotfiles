@@ -13,13 +13,8 @@ My Personal Linux configuration files
 | Notification Center | SwayNC      |
 | Status Bar          | Waybar      |
 | Lock Screen         | Hyprlock    |
-| App Launcher        | Rofi        |
+| App Launcher        | Vicinae     |
 | Shell               | Fish        |
 | Terminal            | Ghostty     |
-| Editor              | VScode      |
+| Editor              | Zed         |
 | Browser             | Zen Browser |
-
-## TODOS
-
-- [x] Swaync notification group bg color change when clear / reduce
-- [x] Hyprland keybinds to resize windows
