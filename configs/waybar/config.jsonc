@@ -22,7 +22,6 @@
     "cpu",
     "bluetooth",
     "network",
-    "battery",
     "power-profiles-daemon",
     "custom/controlcenter"
   ],
@@ -104,19 +103,6 @@
     }
   },
 
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
-    },
-    "format": "{capacity}%  {icon}",
-    "format-charging": "{capacity}%  ",
-    "format-plugged": "{capacity}%  ",
-    "format-alt": "{time}  {icon}",
-    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰁹"]
-  },
-
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "tooltip": true,
@@ -191,7 +177,7 @@
     "format-icons": {
       "connected": "󰂱",
       "disabled": "󰂲",
-      "default": "󰂯"
+      "default": "󰂲"
     },
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",

@@ -1,0 +1,133 @@
+{
+  "status_bar": {
+    "active_language_button": true
+  },
+  "prettier": {
+    "allowed": true
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_icon": true
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "debugger": {
+    "dock": "left"
+  },
+  "notification_panel": {
+    "button": false,
+    "dock": "left"
+  },
+  "terminal": {
+    "dock": "bottom"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "disable_ai": true,
+  "cursor_blink": false,
+  "cursor_shape": "block",
+  "show_edit_predictions": false,
+  "project_panel": {
+    "hide_root": false,
+    "indent_size": 22.0,
+    "folder_icons": true,
+    "file_icons": true,
+    "entry_spacing": "comfortable",
+    "button": true,
+    "dock": "right"
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Material Icon Theme"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "file_scan_exclusions": ["node_modules/", ".git/"],
+  "base_keymap": "VSCode",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_size": 16,
+  "buffer_font_size": 13.5,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Tokyo City"
+  },
+  "format_on_save": "on",
+  "languages": {
+    "Go": {
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "Vue.js": {
+      "tasks": {
+        "prefer_lsp": true
+      },
+      "formatter": {
+        "external": {
+          "command": "node_modules/.bin/prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "node_modules/.bin/prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "node_modules/.bin/prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "Astro": {
+      "formatter": {
+        "external": {
+          "command": "node_modules/.bin/prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    }
+  },
+  "lsp": {
+    "discord_presence": {
+      "initialization_options": {
+        "details": "",
+        "git_integration": false
+      }
+    }
+  }
+}
